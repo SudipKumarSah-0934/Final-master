@@ -1,0 +1,26 @@
+
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:visit_bangladesh/all_side_bar/weather_feature/weatherPage.dart';
+import 'package:visit_bangladesh/splashpage.dart';
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Visit Bangladesh',
+            theme: ThemeData(
+              primarySwatch: Colors.blueGrey,
+            ),
+            home: SplashPage(duration:3, goToPage: Weather_Page()),
+          );
+  }
+}
